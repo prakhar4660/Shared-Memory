@@ -5,30 +5,22 @@
 #include <sys/types.h>
 using namespace std;
 
-class graph
-{
-public:
-    int nodes;
-    vector<vector<int>> adj_list;
+const int MAX_NODES = 10000;
 
-    // Constructor
-    graph(int nodes)
+struct Graph
+{
+    int num_of_nodes;
+    int adj_matrix[MAX_NODES][MAX_NODES];
+
+    Graph(int n)
     {
-        this->nodes = nodes;
-        this->adj_list.clear();
-        this->adj_list.resize(nodes);
-    }
-    // Function to insert edges in graph
-    void insert_edge(int x, int y)
-    {
-        adj_list[x].push_back(y);
-        adj_list[y].push_back(x);
+        num_of_nodes = n;
+        memset(adj_matrix, 0, sizeof(adj_matrix));
     }
 };
 
-void dikstra(graph *g, int i)
+void dikstra(Graph *g, int i)
 {
-    
 }
 
 int main()
@@ -39,8 +31,8 @@ int main()
         {
             while (1)
             {
-                graph *g;
-                dikstra(g, );
+                Graph *g;
+                dikstra(g, 6);
                 sleep(30);
             }
         }
